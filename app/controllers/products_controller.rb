@@ -11,7 +11,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
 
     current_cart.add_product_to_cart(@product)
-    flash[:notice] = "成功加入购物车"
-    redirect_to :back
+    flash[:notice] = "你已成功將 #{@product.title} 加入購物車"
+  else
+    flash[:warning] = "你的購物車內已有此物品"
   end
+  redirect_to :back
 end
