@@ -1,3 +1,16 @@
+
+<!--此範圍內 水平置中 from app/assets/stylesheets/application.scss-->
+<div class="Amiibo_Logo_and_Slogan_middle">
+  <!-- Amiibo_Logo -->
+  <a><%= image_tag("Amiibo_Logo" ,width:"100%") %></a>
+  <!-- 酷炫的 Slogan -->
+  <h1>歡迎來到 任天堂 amiibo 專賣店</h1>
+  <h1></h1>
+  <h1></h1>
+
+</div>
+
+<!-- 系列分類 -->
 <div class="btn-group btn-group-justified" role="group" aria-label="...">
   <div class="btn-group" role="group">
     <button type="button" class="btn btn-default">總覽</button>
@@ -29,10 +42,6 @@
 
 
 <div class="row">
-  <h1>酷炫的Slogan</h1>
-  <h1>酷炫的Slogan</h1>
-  <h1>酷炫的Slogan</h1>
-  <h1>酷炫的Slogan</h1>
   <% @products.each do |product| %>
     <div class="col-xs-6 col-md-3">
       <%= link_to product_path(product) do %>
