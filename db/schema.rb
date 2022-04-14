@@ -55,9 +55,16 @@ ActiveRecord::Schema.define(version: 20220413060551) do
     t.text     "description"
     t.integer  "quantity"
     t.integer  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.string   "image"
+    t.string   "kirby"
+    t.string   "monster_hunter"
+    t.string   "super_smash_bros"
+    t.string   "super_mario"
+    t.string   "splatoon"
+    t.string   "zelda_botw"
+    t.string   "animal_crossing"
     t.string   "series"
   end
 
