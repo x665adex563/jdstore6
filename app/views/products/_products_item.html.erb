@@ -1,0 +1,85 @@
+
+<!--此範圍內 水平置中 from app/assets/stylesheets/application.scss-->
+<div class="Amiibo_Logo_and_Slogan_middle">
+  <!-- Amiibo_Logo -->
+  <a><%= image_tag("Amiibo_Logo" ,width:"100%") %></a>
+  <!-- 酷炫的 Slogan -->
+  <h1>歡迎來到 任天堂 amiibo 專賣店</h1>
+  <h1></h1>
+  <h1></h1>
+
+</div>
+
+<!-- 系列分類 -->
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+
+  <div class="btn-group" role="group">
+    <%= link_to products_path do  %>
+    <button type="button" class="btn btn-default">總覽</button>
+    <% end %>
+  </div>
+
+  <div class="btn-group" role="group">
+    <%= link_to kirby_products_path do  %>
+    <button type="button" class="btn btn-default">星之卡比系列</button>
+    <% end %>
+  </div>
+
+  <div class="btn-group" role="group">
+    <%= link_to monster_hunter_products_path do  %>
+    <button type="button" class="btn btn-default">Monster Hunter系列</button>
+    <% end %>
+  </div>
+
+  <div class="btn-group" role="group">
+    <%= link_to super_smash_bros_products_path do  %>
+    <button type="button" class="btn btn-default">任天堂明星大亂鬥系列</button>
+    <% end %>
+  </div>
+
+  <div class="btn-group" role="group">
+    <%= link_to super_mario_products_path do  %>
+    <button type="button" class="btn btn-default">超級瑪利歐系列</button>
+    <% end %>
+  </div>
+
+  <div class="btn-group" role="group">
+    <%= link_to splatoon_products_path do  %>
+    <button type="button" class="btn btn-default">斯普拉遁系列</button>
+    <% end %>
+  </div>
+
+  <div class="btn-group" role="group">
+    <%= link_to zelda_botw_products_path do  %>
+    <button type="button" class="btn btn-default">薩爾達傳說 曠野之息系列</button>
+    <% end %>
+  </div>
+
+  <div class="btn-group" role="group">
+    <%= link_to animal_crossing_products_path do  %>
+    <button type="button" class="btn btn-default">動物森友會系列</button>
+    <% end %>
+  </div>
+</div>
+
+<br>
+
+
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.image.present? %>
+          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+      <%= product.title %>
+      <br>
+      <%= product.series %>
+      <br>
+      ￥ <%= product.price %>
+    </div>
+  <% end %>
+</div>
