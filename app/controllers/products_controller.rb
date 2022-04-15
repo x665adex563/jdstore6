@@ -1,6 +1,13 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.recent.all
+    @products = case params[:order]
+                when 'by_higher_price'
+                  Product.higher_price
+                when 'by_lower_price'
+                  Product.lower_price
+                else
+                  Product.recent
+                end
   end
 
   def show
@@ -20,31 +27,80 @@ class ProductsController < ApplicationController
   end
 
   def kirby
-    @products = Product.where(:series => "星之卡比").recent
+    @products = case params[:order]
+                when 'by_higher_price'
+                  Product.where(:series => "星之卡比").higher_price
+                when 'by_lower_price'
+                  Product.where(:series => "星之卡比").lower_price
+                else
+                  Product.where(:series => "星之卡比").recent
+                end
   end
 
   def monster_hunter
-    @products = Product.where(:series => "Monster Hunter").recent
+    @products = case params[:order]
+                when 'by_higher_price'
+                  Product.where(:series => "Monster Hunter").higher_price
+                when 'by_lower_price'
+                  Product.where(:series => "Monster Hunter").lower_price
+                else
+                  Product.where(:series => "Monster Hunter").recent
+                end
   end
 
   def super_smash_bros
-    @products = Product.where(:series => "任天堂明星大亂鬥").recent
+    @products = case params[:order]
+                when 'by_higher_price'
+                  Product.where(:series => "任天堂明星大亂鬥").higher_price
+                when 'by_lower_price'
+                  Product.where(:series => "任天堂明星大亂鬥").lower_price
+                else
+                  Product.where(:series => "任天堂明星大亂鬥").recent
+                end
   end
 
   def super_mario
-    @products = Product.where(:series => "超級瑪利歐").recent
+    @products = case params[:order]
+                when 'by_higher_price'
+                  Product.where(:series => "超級瑪利歐").higher_price
+                when 'by_lower_price'
+                  Product.where(:series => "超級瑪利歐").lower_price
+                else
+                  Product.where(:series => "超級瑪利歐").recent
+                end
   end
 
   def splatoon
-    @products = Product.where(:series => "斯普拉遁").recent
+    @products = case params[:order]
+                when 'by_higher_price'
+                  Product.where(:series => "斯普拉遁").higher_price
+                when 'by_lower_price'
+                  Product.where(:series => "斯普拉遁").lower_price
+                else
+                  Product.where(:series => "斯普拉遁").recent
+                end
   end
 
   def zelda_botw
-    @products = Product.where(:series => "薩爾達傳說 曠野之息").recent
+    @products = case params[:order]
+                when 'by_higher_price'
+                  Product.where(:series => "薩爾達傳說 曠野之息").higher_price
+                when 'by_lower_price'
+                  Product.where(:series => "薩爾達傳說 曠野之息").lower_price
+                else
+                  Product.where(:series => "薩爾達傳說 曠野之息").recent
+                end
   end
 
   def animal_crossing
-    @products = Product.where(:series => "動物森友會").recent
+    @products = case params[:order]
+                when 'by_higher_price'
+                  Product.where(:series => "動物森友會").higher_price
+                when 'by_lower_price'
+                  Product.where(:series => "動物森友會").lower_price
+                else
+                  Product.where(:series => "動物森友會").recent
+                end
   end
 
 
