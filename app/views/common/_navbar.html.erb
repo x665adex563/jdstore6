@@ -21,11 +21,11 @@
                 <% if !current_user %>
                 <!-- 登出登入為彈窗，最下面的code也是 -->
                  <li><a href="#" data-toggle="modal" data-target="#signup-modal">註冊</a></li>
-                 <li><a href="#" data-toggle="modal" data-target="#login-modal">您好，用戶</a></li>
+                 <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
                 <% else %>
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Hi!, <%= current_user.email %>
+                        您好，用戶 <%= current_user.email %>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
